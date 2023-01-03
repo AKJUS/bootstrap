@@ -23,26 +23,16 @@ if [[ "$ans" == Y* || "$ans" == y* ]]; then
 fi
 echo "VM: $vm"
 
-#
-# Arch
-#
-
-# Upgrade system
-sudo pacman -Syu --noconfirm
-
-# Install packages
-sudo pacman -S --noconfirm - < packages/arch.txt
-
-# Install packages for non-VM machines
-if ! $vm; then
-	sudo pacman -S --noconfirm - < packages/arch_not_vm.txt
+if grep -E ^ID=arch /etc/os-release; then
+	source distros/arch.sh
+else
+	echo -n "Could not detect a compatible distro. Continue with arch? (y/N): "
+	read -r ans
+	if [[ "$ans" != Y* && "$ans" != y* ]]; then
+		exit 1
+	fi
+	source distros/arch.sh
 fi
-
-# Fetch AUR packages (but don't build or install them)
-mkdir -p /home/"$user"/git/AUR
-cat ./packages/arch_aur.txt | while read -r package; do
-	git -C  /home/"$user"/git/AUR/ clone "$package"
-done
 
 # i3 config
 mkdir -p /home/"$user"/.config/i3
