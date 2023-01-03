@@ -2,7 +2,7 @@
 
 if [ "$EUID" -eq 0 ]; then
 	echo -n "You probably don't want to run this as sudo/root. Continue anyway? (y/N): "
-	read ans
+	read -r ans
 	if [[ "$ans" != Y* && "$ans" != y* ]]; then
 		exit 1
 	fi
@@ -16,7 +16,7 @@ sudo --validate
 # Bootstrap configuration
 
 echo -n "Is this a VM? (y/N): "
-read ans
+read -r ans
 
 if [[ "$ans" == Y* || "$ans" == y* ]]; then
 	vm=true
@@ -40,7 +40,7 @@ fi
 
 # Fetch AUR packages (but don't build or install them)
 mkdir -p /home/"$user"/git/AUR
-cat ./packages/arch_aur.txt | while read package; do
+cat ./packages/arch_aur.txt | while read -r package; do
 	git -C  /home/"$user"/git/AUR/ clone "$package"
 done
 
@@ -55,7 +55,7 @@ iface=$(ip link | grep -m 1 "state UP" | cut -f 2 -d ':' | xargs)
 sudo sed -i "s/ethernet [a-z0-9]* {/ethernet $iface {/" /etc/i3status.conf
 sudo sed -i "s/ethernet [a-z0-9]*\"/ethernet $iface\"/" /etc/i3status.conf
 # Set correct hwmon for CPU temperature
-hwmon=$(ls /sys/devices/platform/coretemp.0/hwmon/ | grep -m 1 -E "hwmon[0-9]")
+hwmon=$(find /sys/devices/platform/coretemp.0/hwmon/ -type d | grep -m 1 -E "hwmon[0-9]" | rev | cut -f 1 -d '/' | rev)
 sudo sed -i "s/hwmon1/$hwmon/g" /etc/i3status.conf
 
 # vim config

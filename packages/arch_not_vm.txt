@@ -1,2 +1,3 @@
 bitwarden
+shellcheck
 signal-desktop
