@@ -1,0 +1,12 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+source .bash_ps1
+source .bash_alias
+
+export EDITOR=vim

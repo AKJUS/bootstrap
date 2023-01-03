@@ -1,0 +1,17 @@
+source .bash_codes
+
+exit_status() {
+    if [[ $? == 0 ]]; then
+        echo -ne "$BOLD$GREEN"
+    else
+        echo -n "$BOLD$RED"
+    fi
+}
+
+# CWD
+string="[$(echo -n $BOLD$YELLOW\\w$RESET)]"
+
+# Previous exit code
+string="$string\n"'\[$(exit_status)\]$ '"\[$RESET\]"
+
+PS1="$string"

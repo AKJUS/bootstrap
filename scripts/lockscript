@@ -1,0 +1,7 @@
+#!/bin/bash
+
+import -window root /tmp/lock.png
+convert -blur 0x8 /tmp/lock.png /tmp/lock.png
+
+i3lock -i /tmp/lock.png
+rm /tmp/lock.png

@@ -1,0 +1,3 @@
+https://aur.archlinux.org/drawio-desktop.git
+https://aur.archlinux.org/google-chrome.git
+https://aur.archlinux.org/tor-browser.git
