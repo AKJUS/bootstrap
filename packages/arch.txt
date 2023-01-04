@@ -7,5 +7,6 @@ git
 imagemagick
 jadx
 man
+unzip
 xorg-xinput
 zenity
