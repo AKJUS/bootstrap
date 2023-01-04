@@ -88,3 +88,6 @@ cp ./conf_files/git.conf /home/"$user"/.gitconfig
 
 # sysctl
 sudo sysctl -w vm.swappiness=1
+
+# Xresources
+cp ./conf_files/xresources.conf /home/"$user"/.Xresources
