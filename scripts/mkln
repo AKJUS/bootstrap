@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+target=$1
+name=$2
+
+if [ "$#" -lt 2 ]; then
+	name=$1;
+fi
+
+sudo ln -s $(pwd)/$1 /usr/local/bin/$2
