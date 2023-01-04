@@ -14,10 +14,12 @@ else
 		python3 -m venv venv
 		source venv/bin/activate
 
-		echo -n "Install requirements in new venv? (Y/n): "
-		read -r ans
-		if [[ "$ans" != N* && "$ans" != n* ]]; then
-			pip install -r requirements.txt
+		if ls requirements.txt > /dev/null 2> /dev/null; then
+			echo -n "Install requirements in new venv? (Y/n): "
+			read -r ans
+			if [[ "$ans" != N* && "$ans" != n* ]]; then
+				pip install -r requirements.txt
+			fi
 		fi
 	else
 		echo "Doing nothing"
