@@ -3,11 +3,23 @@
 if type deactivate > /dev/null 2> /dev/null; then
 	echo "Leaving venv"
 	deactivate
-elif ls python_venv > /dev/null 2> /dev/null; then
+elif ls venv > /dev/null 2> /dev/null; then
 	echo "Activating existing venv"
-	source python_venv/bin/activate
+	source venv/bin/activate
 else
-	echo "Creating new venv"
-	python3 -m venv python_venv
-	source python_venv/bin/activate
+	echo -n "Create new venv? (Y/n): "
+	read -r ans
+	if [[ "$ans" != N* && "$ans" != n* ]]; then
+		echo "Creating new venv"
+		python3 -m venv venv
+		source venv/bin/activate
+
+		echo -n "Install requirements in new venv? (Y/n): "
+		read -r ans
+		if [[ "$ans" != N* && "$ans" != n* ]]; then
+			pip install -r requirements.txt
+		fi
+	else
+		echo "Doing nothing"
+	fi
 fi
