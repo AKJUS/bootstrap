@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/echo This script needs to be sourced, not run directly: source
 
 if type deactivate > /dev/null 2> /dev/null; then
 	echo "Leaving venv"
