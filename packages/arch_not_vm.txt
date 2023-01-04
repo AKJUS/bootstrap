@@ -1,3 +1,6 @@
 bitwarden
+cronie
+hashcat
+iptables
 shellcheck
 signal-desktop

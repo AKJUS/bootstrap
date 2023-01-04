@@ -4,12 +4,8 @@ firefox
 gef
 ghidra
 git
-hashcat
 imagemagick
-iptables
 jadx
-jq
 man
-pacutils
 xorg-xinput
 zenity
