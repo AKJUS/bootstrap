@@ -23,15 +23,16 @@ if [[ "$ans" == Y* || "$ans" == y* ]]; then
 fi
 echo "VM: $vm"
 
+# Distro detection and package installation
+
 if grep -E ^ID=arch /etc/os-release; then
 	source distros/arch.sh
 else
-	echo -n "Could not detect a compatible distro. Continue with arch? (y/N): "
+	echo -n "Could not detect a compatible distro. Try to continue without installing packages? (y/N): "
 	read -r ans
 	if [[ "$ans" != Y* && "$ans" != y* ]]; then
 		exit 1
 	fi
-	source distros/arch.sh
 fi
 
 # i3 config
