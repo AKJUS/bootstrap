@@ -16,7 +16,13 @@ if type deactivate > /dev/null 2> /dev/null; then
 	echo "Leaving venv"
 	deactivate
 elif venv_search; then
-	echo "Activating existing venv at $result"
+	relpath=$(realpath --relative-to='.' "$result")
+	dir_name="\e[1m$(echo -n "$result" | rev | cut -f 2 -d '/' | rev)\e[0m"
+	string="Activating existing venv for $dir_name"
+	if [[ $relpath != "venv" ]]; then
+		string="$string ( $relpath )"
+	fi
+	echo -e "$string"
 	source "$result"/bin/activate
 else
 	echo -n "Create new venv? (Y/n): "
