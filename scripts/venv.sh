@@ -29,7 +29,8 @@ else
 	read -r ans
 	if [[ "$ans" != N* && "$ans" != n* ]]; then
 		echo "Creating new venv"
-		python3 -m venv venv
+		prompt=$(realpath . | rev | cut -f 1 -d '/' | rev)
+		python3 -m venv venv --prompt "\e[96m$prompt\e[0m"
 		source venv/bin/activate
 
 		if ls requirements.txt > /dev/null 2> /dev/null; then
