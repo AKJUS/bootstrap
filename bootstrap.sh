@@ -67,13 +67,21 @@ sudo -E make -C /home/"$user"/git/stterm/ install
 # scripts
 sudo cp ./scripts/* /usr/local/bin/
 
-# iptables
+# iptables + no-internet script
 if sudo iptables -S; then
+	# Block incoming except icmp and localhost
 	sudo iptables -C INPUT -j ACCEPT -m conntrack --ctstate ESTABLISHED,RELATED 2> /dev/null || sudo iptables -A INPUT -j ACCEPT -m conntrack --ctstate ESTABLISHED,RELATED
 	sudo iptables -C INPUT -j ACCEPT --src localhost 2> /dev/null || sudo iptables -A INPUT -j ACCEPT --src localhost
 	sudo iptables -C INPUT -j ACCEPT --proto icmp 2> /dev/null || sudo iptables -A INPUT -j ACCEPT --proto icmp
 	sudo iptables -P INPUT DROP
 
+	# Deny all traffic for no-internet group
+	sudo groupadd no-internet
+	sudo usermod -aG no-internet "$user"
+	sudo iptables -I OUTPUT 1 -m owner --gid-owner no-internet -j DROP
+	sudo cp ./scripts/no-internet.sh /usr/local/bin/
+
+	# Persist iptables rules
 	sudo iptables-save -f /etc/iptables/iptables.rules
 else
 	echo "iptables might not be loaded, you need to reboot before iptables rules can be applied"
