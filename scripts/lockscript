@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#
+# Take a screenshot of current screens, blur it, then use it as the backgroun for i3lock
+#
+
 import -window root /tmp/lock.png
 convert -blur 0x8 /tmp/lock.png /tmp/lock.png
 

@@ -1,5 +1,15 @@
 #!/usr/bin/echo This script needs to be sourced, not run directly: source
 
+#
+# Handle the most common python venv operations automatically
+# Will try in order:
+# 	- Deactivate current venv if one is active
+#	- Activate venv in current directory
+#	- Search directories upwards for venvs and activate them
+#	- Ask to create a new venv in current directory
+#		- If requirements.txt is detected, ask if you want to install dependencies
+#
+
 venv_name=".venv"
 
 venv_search() {

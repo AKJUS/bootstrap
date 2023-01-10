@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#
+# Create a symlink in /usr/local/bin of target. Optional link name as second arg
+#
+
 target=$1
 name=$2
 
