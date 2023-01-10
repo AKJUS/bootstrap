@@ -73,6 +73,8 @@ if sudo iptables -S; then
 	sudo iptables -C INPUT -j ACCEPT --src localhost 2> /dev/null || sudo iptables -A INPUT -j ACCEPT --src localhost
 	sudo iptables -C INPUT -j ACCEPT --proto icmp 2> /dev/null || sudo iptables -A INPUT -j ACCEPT --proto icmp
 	sudo iptables -P INPUT DROP
+
+	sudo iptables-save -f /etc/iptables/iptables.rules
 else
 	echo "iptables might not be loaded, you need to reboot before iptables rules can be applied"
 fi
