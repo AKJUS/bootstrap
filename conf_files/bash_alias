@@ -1,3 +1,4 @@
 alias ls='ls --color=auto'
 alias clipboard="xclip -sel clipboard"
 alias venv="source /usr/local/bin/venv.sh"
+alias shrug="echo '¯\_(ツ)_/¯' | xclip -f -sel clipboard"
