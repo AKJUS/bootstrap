@@ -20,6 +20,7 @@ done
 
 # Turn on stuff
 sudo systemctl enable cronie
+sudo systemctl start cronie
 sudo systemctl enable dhcpcd
 
 systemctl --user enable pipewire
