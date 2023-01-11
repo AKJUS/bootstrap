@@ -7,7 +7,7 @@ git
 imagemagick
 jadx
 man
-otf-ipafont
+noto-fonts
 unzip
 xorg-xinput
 zenity
