@@ -8,6 +8,8 @@ imagemagick
 jadx
 man
 noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
 unzip
 xorg-xinput
 zenity
