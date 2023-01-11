@@ -41,13 +41,12 @@ cp ./conf_files/i3.conf /home/"$user"/.config/i3/config
 
 # i3status config
 sudo cp ./conf_files/i3status.conf /etc/i3status.conf
-# Set interface name in i3status conf (assume first UP interface is correct)
-iface=$(ip link | grep -m 1 "state UP" | cut -f 2 -d ':' | xargs)
-sudo sed -i "s/ethernet [a-z0-9]* {/ethernet $iface {/" /etc/i3status.conf
-sudo sed -i "s/ethernet [a-z0-9]*\"/ethernet $iface\"/" /etc/i3status.conf
-# Set correct hwmon for CPU temperature
-hwmon=$(find /sys/devices/platform/coretemp.0/hwmon/ -type d | grep -m 1 -E "hwmon[0-9]" | rev | cut -f 1 -d '/' | rev)
-sudo sed -i "s/hwmon1/$hwmon/g" /etc/i3status.conf
+# Set interface name in i3status conf (assume first UP interface is correct - fallback to _first_)
+iface=$(ip link | cut -f 2- -d ' ' | grep -E "^e" | grep -m 1 "state UP")
+if [[ ! -z "$iface" ]]; then
+	sudo sed -i "s/ethernet _first_ {/ethernet $iface {/" /etc/i3status.conf
+	sudo sed -i "s/ethernet _first_\"/ethernet $iface\"/" /etc/i3status.conf
+fi
 
 # vim config
 mkdir -p /home/"$user"/.vim/colors
