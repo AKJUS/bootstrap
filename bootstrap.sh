@@ -69,6 +69,8 @@ sudo cp ./scripts/* /usr/local/bin/
 
 # iptables + no-internet script
 sudo modprobe ip_tables
+sudo systemctl enable iptables
+sudo systemctl start iptables
 if sudo iptables -S; then
 	# Block incoming except icmp and localhost
 	sudo iptables -C INPUT -j ACCEPT -m conntrack --ctstate ESTABLISHED,RELATED 2> /dev/null || sudo iptables -A INPUT -j ACCEPT -m conntrack --ctstate ESTABLISHED,RELATED
