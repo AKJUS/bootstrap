@@ -81,7 +81,7 @@ if sudo iptables -S; then
 	# Deny all traffic for no-internet group
 	sudo groupadd no-internet
 	sudo usermod -aG no-internet "$user"
-	sudo iptables -I OUTPUT 1 -m owner --gid-owner no-internet -j DROP
+	sudo iptables -C OUTPUT -m owner --gid-owner no-internet -j DROP 2> /dev/null || sudo iptables -I OUTPUT 1 -m owner --gid-owner no-internet -j DROP
 	sudo cp ./scripts/no-internet.sh /usr/local/bin/
 
 	# Persist iptables rules
