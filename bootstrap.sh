@@ -103,3 +103,6 @@ sudo sysctl -w vm.swappiness=1
 
 # Xresources
 cp ./conf_files/xresources.conf /home/"$user"/.Xresources
+
+# xinitrc
+cp ./conf_files/xinitrc /home/"$user"/.xinitrc
