@@ -26,7 +26,7 @@ echo "VM: $vm"
 # Distro detection and package installation
 
 if grep -E ^ID=arch /etc/os-release; then
-	source distros/arch.sh
+	source distros/arch/arch.sh
 else
 	echo -n "Could not detect a compatible distro. Try to continue without installing packages? (y/N): "
 	read -r ans

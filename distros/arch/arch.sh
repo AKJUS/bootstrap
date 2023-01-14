@@ -1,3 +1,6 @@
+# Norwegian mirrors
+sudo cp distros/arch/mirrorlist /etc/pacman.d/mirrorlist
+
 # Upgrade system
 sudo pacman -Syu --noconfirm
 
@@ -14,3 +17,9 @@ mkdir -p /home/"$user"/git/AUR
 cat ./packages/arch_aur.txt | while read -r package; do
         git -C  /home/"$user"/git/AUR/ clone "$package"
 done
+
+# Turn on stuff
+sudo systemctl enable cronie
+sudo systemctl enable dhcpcd
+
+systemctl --user enable pipewire

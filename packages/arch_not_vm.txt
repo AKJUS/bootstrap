@@ -1,5 +1,6 @@
 bitwarden
 cronie
+cuda-tools
 hashcat
 iptables
 shellcheck
