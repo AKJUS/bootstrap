@@ -3,5 +3,6 @@ cronie
 cuda-tools
 hashcat
 iptables
+ncspot
 shellcheck
 signal-desktop

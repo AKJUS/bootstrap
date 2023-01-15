@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if ! pgrep ncspot; then
+	/usr/local/bin/st -e ncspot
+else
+	i3-msg '[title="ncspot"] focus'
+fi
