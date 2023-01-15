@@ -19,6 +19,7 @@ noto-fonts-emoji
 pavucontrol
 pipewire
 pipewire-pulse  # some day man, some day...
+polybar
 rofi
 unzip
 vim

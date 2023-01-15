@@ -111,3 +111,7 @@ cp ./conf_files/xinitrc /home/"$user"/.xinitrc
 sudo cp ./scripts/spotify /usr/local/bin
 mkdir -p /home/"$user"/.config/ncspot
 cp ./conf_files/ncspot.conf /home/"$user"/.config/ncspot/config.toml
+
+# Polybar
+mkdir -p /home/"$user"/.config/polybar
+cp ./conf_files/polybar.conf /home/"$user"/.config/polybar/polybar.conf
