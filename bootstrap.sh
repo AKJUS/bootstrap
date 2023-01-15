@@ -42,7 +42,7 @@ cp ./conf_files/i3.conf /home/"$user"/.config/i3/config
 # i3status config
 sudo cp ./conf_files/i3status.conf /etc/i3status.conf
 # Set interface name in i3status conf (assume first UP interface is correct - fallback to _first_)
-iface=$(ip link | cut -f 2- -d ' ' | grep -E "^e" | grep -m 1 "state UP")
+iface=$(ip link | cut -f 2- -d ' ' | grep -E "^e" | grep -m 1 "state UP" | cut -f 1 -d ':')
 if [[ ! -z "$iface" ]]; then
 	sudo sed -i "s/ethernet _first_ {/ethernet $iface {/" /etc/i3status.conf
 	sudo sed -i "s/ethernet _first_\"/ethernet $iface\"/" /etc/i3status.conf
