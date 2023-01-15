@@ -109,3 +109,5 @@ cp ./conf_files/xinitrc /home/"$user"/.xinitrc
 
 # Spotify
 sudo cp ./scripts/spotify /usr/local/bin
+mkdir -p /home/"$user"/.config/ncspot
+cp ./conf_files/ncspot.conf /home/"$user"/.config/ncspot/config.toml
