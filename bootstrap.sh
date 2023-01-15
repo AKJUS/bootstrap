@@ -108,4 +108,4 @@ cp ./conf_files/xresources.conf /home/"$user"/.Xresources
 cp ./conf_files/xinitrc /home/"$user"/.xinitrc
 
 # Spotify
-cp ./scripts/spotify /usr/local/bin
+sudo cp ./scripts/spotify /usr/local/bin
