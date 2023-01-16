@@ -99,6 +99,10 @@ cp ./conf_files/bash_alias /home/"$user"/.bash_alias
 cp ./conf_files/git.conf /home/"$user"/.gitconfig
 cp ./conf_files/gitignore_global.conf /home/"$user"/.gitignore_global
 
+# ssh
+mkdir -p /home/"$user"/.ssh
+cp ./conf_files/ssh.conf /home/"$user"/.ssh/config
+
 # sysctl
 sudo sysctl -w vm.swappiness=1
 
