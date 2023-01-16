@@ -7,4 +7,4 @@
 polybar-msg cmd quit
 
 echo "---" | tee -a /tmp/polybar.log
-polybar lars 2>&1 | tee -a /tmp/polybar.log & disown
+polybar lars -c ~/.config/polybar/polybar.conf 2>&1 | tee -a /tmp/polybar.log & disown
