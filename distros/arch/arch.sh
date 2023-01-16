@@ -5,11 +5,15 @@ sudo cp distros/arch/mirrorlist /etc/pacman.d/mirrorlist
 sudo pacman -Syu --noconfirm
 
 # Install packages
-sudo pacman -S --noconfirm - < packages/arch.txt
+cat packages/arch.txt | while read package; do
+	sudo pacman -S --noconfirm "$package"
+done
 
 # Install packages for non-VM machines
 if ! $vm; then
-        sudo pacman -S --noconfirm - < packages/arch_not_vm.txt
+        cat packages/arch_not_vm.txt | while read package; do
+	        sudo pacman -S --noconfirm "$package"
+        done
 fi
 
 # Fetch AUR packages (but don't build or install them)
