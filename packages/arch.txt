@@ -21,6 +21,7 @@ pipewire
 pipewire-pulse  # some day man, some day...
 polybar
 rofi
+the_silver_searcher
 unzip
 vim
 wget
