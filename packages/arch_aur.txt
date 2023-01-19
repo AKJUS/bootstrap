@@ -1,6 +1,10 @@
+https://aur.archlinux.org/clion.git
 https://aur.archlinux.org/drawio-desktop.git
 https://aur.archlinux.org/expressvpn.git
 https://aur.archlinux.org/google-chrome.git
+https://aur.archlinux.org/phpstorm.git
 https://aur.archlinux.org/polybar-scripts-git.git
+https://aur.archlinux.org/pycharm-professional.git
 https://aur.archlinux.org/tor-browser.git
 https://aur.archlinux.org/sublime-text-4.git
+https://aur.archlinux.org/webstorm.git
