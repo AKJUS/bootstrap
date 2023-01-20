@@ -1,3 +1,5 @@
+https://aur.archlinux.org/android-emulator.git
+https://aur.archlinux.org/android-studio.git
 https://aur.archlinux.org/clion.git
 https://aur.archlinux.org/drawio-desktop.git
 https://aur.archlinux.org/expressvpn.git
