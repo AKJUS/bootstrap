@@ -1,6 +1,8 @@
 bitwarden
 cronie
 cuda-tools
+dosfstools
+exfat-utils
 hashcat
 iptables
 ncspot
