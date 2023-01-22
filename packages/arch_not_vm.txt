@@ -6,3 +6,4 @@ iptables
 ncspot
 shellcheck
 signal-desktop
+vlc
