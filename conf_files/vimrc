@@ -1,3 +1,11 @@
 colorscheme afterglow
 set number
 syntax on
+
+" Tab characters makes spaces instead
+set softtabstop=4 expandtab shiftwidth=4 smarttab
+" Except in makefiles
+if has("autocmd")
+    filetype plugin indent on
+    autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+endif
