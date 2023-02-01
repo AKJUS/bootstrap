@@ -1,6 +1,8 @@
 android-tools
 arandr
+ascii
 base-devel
+binwalk
 dhclient
 dhcpcd
 dkms
@@ -23,6 +25,7 @@ pipewire-pulse  # some day man, some day...
 polybar
 rofi
 the_silver_searcher
+usbutils
 unzip
 vim
 wget
