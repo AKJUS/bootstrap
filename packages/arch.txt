@@ -22,6 +22,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 pavucontrol
+perl-image-exiftool
 pipewire
 pipewire-pulse  # some day man, some day...
 polybar
