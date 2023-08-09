@@ -120,3 +120,6 @@ cp ./conf_files/ncspot.conf /home/"$user"/.config/ncspot/config.toml
 # Polybar
 mkdir -p /home/"$user"/.config/polybar
 cp ./conf_files/polybar.conf /home/"$user"/.config/polybar/polybar.conf
+
+# Timezone
+sudo timedatectl set-timezone Europe/Oslo
