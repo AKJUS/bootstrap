@@ -32,5 +32,6 @@ git -C /home/"$user"/git/AUR/webstorm checkout 7817a34
 sudo systemctl enable cronie
 sudo systemctl start cronie
 sudo systemctl enable dhcpcd
+sudo systemctl enable ntpd
 
 systemctl --user enable pipewire

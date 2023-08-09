@@ -21,6 +21,7 @@ net-tools
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+ntp
 pavucontrol
 perl-image-exiftool
 pipewire
