@@ -17,6 +17,7 @@ imagemagick
 jadx
 linux-headers
 man
+mlocate
 net-tools
 noto-fonts
 noto-fonts-cjk
