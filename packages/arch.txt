@@ -1,6 +1,7 @@
 android-tools
 arandr
 ascii
+audacity
 base-devel
 bind
 binwalk
@@ -16,6 +17,7 @@ i3
 imagemagick
 jadx
 linux-headers
+ltrace
 man
 mlocate
 net-tools
