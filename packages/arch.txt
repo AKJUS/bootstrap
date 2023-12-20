@@ -21,6 +21,7 @@ ltrace
 man
 mlocate
 net-tools
+nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -36,6 +37,7 @@ usbutils
 unzip
 vim
 wget
+wireshark-qt
 xclip
 xdg-desktop-portal
 xorg-server
