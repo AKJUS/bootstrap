@@ -7,6 +7,7 @@ hashcat
 iptables
 ncspot
 ntp
+qemu-full
 shellcheck
 signal-desktop
 vlc
