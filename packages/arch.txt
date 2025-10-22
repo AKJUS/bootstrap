@@ -5,6 +5,7 @@ audacity
 base-devel
 bind
 binwalk
+bolt
 dhclient
 dhcpcd
 dkms
