@@ -27,6 +27,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ntp
+openresolv
 pavucontrol
 perl-image-exiftool
 pipewire
@@ -39,6 +40,7 @@ usbutils
 unzip
 vim
 wget
+wireguard-tools
 wireshark-qt
 xclip
 xdg-desktop-portal

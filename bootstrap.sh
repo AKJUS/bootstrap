@@ -121,5 +121,8 @@ cp ./conf_files/ncspot.conf /home/"$user"/.config/ncspot/config.toml
 mkdir -p /home/"$user"/.config/polybar
 cp ./conf_files/polybar.conf /home/"$user"/.config/polybar/polybar.conf
 
+# VPN script nopasswd
+sudo cp ./conf_files/99_wheel /etc/sudoers.d/
+
 # Timezone
 sudo timedatectl set-timezone Europe/Oslo
