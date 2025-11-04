@@ -31,10 +31,14 @@ if [[ $STATUS == true ]]; then
 fi
 
 if [[ $TOGGLE == true ]]; then
+    
+    resolvconf -u
+    
     if [[ -n $(wg show) ]]; then 
         wg-quick down no
     else
         wg-quick up no
     fi
+
 fi
 
